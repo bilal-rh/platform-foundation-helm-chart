@@ -1,0 +1,25 @@
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: check-operators-ready
+#   annotations:
+#     helm.sh/hook: pre-install,pre-upgrade
+#     helm.sh/hook-weight: "0"
+# spec:
+#   template:
+#     spec:
+#       containers:
+#       - name: check-operators
+#         image: busybox
+#         command:
+#         - sh
+#         - -c
+#         - |
+#           echo "Checking if operators are ready..."
+#           until oc get subscription  rhods-operator -n redhat-ods-operator -o jsonpath='{.status.state}' | grep -q  "AtLeastKnown"; do
+#             echo "Waiting for operators to be ready..."
+#             sleep 10
+#           done
+#           echo "All operators are ready!"
+#       restartPolicy: OnFailure
+#   backoffLimit: 4

@@ -1,0 +1,52 @@
+# Default values for platform-foundation.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+operators:
+  gitops:
+    namespace: openshift-operators
+    channel: latest
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace  
+  
+  serverless:
+    namespace: openshift-serverless
+    channel: stable
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  
+  serviceMesh:
+    namespace: openshift-operators
+    channel: stable
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  
+  pipelines:
+    namespace: openshift-operators
+    channel: latest
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  
+  ai:
+    namespace: redhat-ods-operator
+    channel: fast
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  
+  nodeFeatureDiscovery:
+     namespace: openshift-nfd
+     channel: stable
+     source: redhat-operators
+     sourceNamespace: openshift-marketplace
+  
+  nvidiaGpu:
+    namespace: nvidia-gpu-operator
+    channel: stable
+    source: certified-operators
+    sourceNamespace: openshift-marketplace
+  
+  authorino:
+    namespace: openshift-operators
+    channel: stable
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace

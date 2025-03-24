@@ -1,0 +1,21 @@
+# apiVersion: dscinitialization.opendatahub.io/v1
+# kind: DSCInitialization
+# metadata:
+#   name: default-dsci
+#   annotations:
+#     helm.sh/hook: post-install,post-upgrade
+#     helm.sh/hook-weight: "1"
+# spec:
+#   applicationsNamespace: redhat-ods-applications
+#   monitoring:
+#     managementState: Managed
+#     namespace: redhat-ods-monitoring
+#   serviceMesh:
+#     controlPlane:
+#       metricsCollection: Istio
+#       name: data-science-smcp
+#       namespace: istio-system
+#     managementState: Removed
+#   trustedCABundle:
+#     customCABundle: ''
+#     managementState: Managed

@@ -1,0 +1,103 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-gitops-operator
+  namespace: {{ .Values.operators.gitops.namespace }}
+spec:
+  channel: {{ .Values.operators.gitops.channel }}
+  name: openshift-gitops-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+---
+
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-serverless-operator
+  namespace: {{ .Values.operators.serverless.namespace }}
+spec:
+  channel: {{ .Values.operators.serverless.channel }}
+  name: serverless-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+---
+
+
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-service-mesh-operator
+  namespace: {{ .Values.operators.serviceMesh.namespace }}
+spec:
+  channel: {{ .Values.operators.serviceMesh.channel }}
+  name: servicemeshoperator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+
+---
+
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-pipelines-operator
+  namespace: {{ .Values.operators.pipelines.namespace }}
+spec:
+  channel: {{ .Values.operators.pipelines.channel }}
+  name: openshift-pipelines-operator-rh
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+
+---
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: rhods-operator
+  namespace: {{ .Values.operators.ai.namespace }}
+spec:
+  channel: {{ .Values.operators.ai.channel }}
+  name: rhods-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+
+---
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: nfd
+  namespace: {{ .Values.operators.nodeFeatureDiscovery.namespace }}
+spec:
+  channel: {{ .Values.operators.nodeFeatureDiscovery.channel }}
+  name: nfd
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+
+---
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: nvidia-gpu-operator
+  namespace: {{ .Values.operators.nvidiaGpu.namespace }}
+spec:
+  channel: {{ .Values.operators.nvidiaGpu.channel }}
+  name: gpu-operator-certified
+  source: certified-operators
+  sourceNamespace: openshift-marketplace
+
+---
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: authorino-operator
+  namespace: {{ .Values.operators.authorino.namespace }}
+spec:
+  channel: {{ .Values.operators.authorino.channel }}
+  name: authorino-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace

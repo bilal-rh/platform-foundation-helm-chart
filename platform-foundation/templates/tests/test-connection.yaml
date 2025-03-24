@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "platform-foundation.fullname" . }}-test-connection"
+  labels:
+    {{- include "platform-foundation.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "platform-foundation.fullname" . }}:{{ .Values.operators.nvidiaGpu.channel }}']
+  restartPolicy: Never
